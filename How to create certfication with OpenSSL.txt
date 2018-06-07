@@ -4,6 +4,8 @@
 	openssl genrsa -out server.key 2048       (不加密)
 	去除key文件口令的命令:
 	openssl rsa -in server.key -out server.key
+	根据私钥生成公钥:
+	openssl rsa -in server.key -pubout -out server_pub.pem
 	
 	用密钥创建request
 	openssl req -new -sha256 -key server.key -out server.csr -config openssl.cfg
